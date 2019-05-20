@@ -14,6 +14,7 @@ class InteractiveRecord
       column_names << column["name"]
     end
     
+    column_names
   end
   
   def self.table_name
