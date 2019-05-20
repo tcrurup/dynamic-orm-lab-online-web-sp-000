@@ -7,5 +7,9 @@ class InteractiveRecord
   def self.column_names
     
   end
+  
+  def self.table_name
+    self.to_s.downcase.pluralize
+  end
  
 end
