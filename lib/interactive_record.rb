@@ -5,6 +5,9 @@ class InteractiveRecord
 
 
   def self.column_names
+    sql = "PRAGMA table_info(#{self.table_name})"
+    table_data = DB[:conn].execute(sql)
+    binding.pry
     
   end
   
