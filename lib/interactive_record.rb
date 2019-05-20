@@ -9,7 +9,7 @@ class InteractiveRecord
   end
   
   def col_names_for_insert
-    self.class.
+    self.class.column_names
   end
   
   def table_name_for_insert
