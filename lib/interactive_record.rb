@@ -15,6 +15,15 @@ class InteractiveRecord
   def table_name_for_insert
     self.class.table_name
   end
+  
+  def values_for_insert
+    values = []
+    
+    self.class.column_names.each do |name|
+      values << "'#{send(name)}'" unless send(name).nil?
+    end
+    values.join(", ")
+  end
 
   def self.column_names
     sql = "PRAGMA table_info(#{self.table_name})"
