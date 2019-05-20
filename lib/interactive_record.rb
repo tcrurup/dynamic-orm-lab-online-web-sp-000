@@ -5,9 +5,7 @@ require 'pry'
 class InteractiveRecord
 
   def initialize(options={})
-    options.each do |key, value|
-      
-    end
+    options.each{ |key, value| self.send("#{key}=", value) }
   end
 
   def self.column_names
