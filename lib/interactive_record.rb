@@ -47,8 +47,7 @@ class InteractiveRecord
     name = hash.keys[0]
     value = hash[name]
     sql = "SELECT * FROM #{self.table_name} WHERE #{name.to_s} = ?"
-    x = DB[:conn].execute(sql, value)
-    binding.pry 
+    DB[:conn].execute(sql, value)
   end
   
   def self.find_by_name(name)
